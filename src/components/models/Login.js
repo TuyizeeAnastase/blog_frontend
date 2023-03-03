@@ -8,7 +8,7 @@ export const Login = ({ setShowSignUp, setShowLogin }) => {
     e.preventDefault();
     try {
       await axios
-        .post("http://localhost:3500/api/v1/users/login", {
+        .post("https://blog-backend-4lug.onrender.com/api/v1/users/login", {
           email,
           password,
         })

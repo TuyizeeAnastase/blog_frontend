@@ -10,7 +10,7 @@ export const Home = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get("http://localhost:3500/api/v1/posts");
+        const response = await axios.get("https://blog-backend-4lug.onrender.com/api/v1/posts");
         setPosts(response.data.posts.rows);
       } catch (err) {
         setPosts(err.message);

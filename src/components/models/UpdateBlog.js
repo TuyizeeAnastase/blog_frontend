@@ -10,7 +10,7 @@ export const UpdateBlog = ({ postId, postTitle, postContent }) => {
     try {
       await axios
         .patch(
-          `http://localhost:3500/api/v1/posts/${postId}`,
+          `https://blog-backend-4lug.onrender.com/api/v1/posts/${postId}`,
           {
             title: title,
             content: content,

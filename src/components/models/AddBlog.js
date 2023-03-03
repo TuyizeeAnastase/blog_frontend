@@ -10,7 +10,7 @@ export const AddBlog = () => {
     try {
       await axios
         .post(
-          "http://localhost:3500/api/v1/posts",
+          "https://blog-backend-4lug.onrender.com/api/v1/posts/",
           {
             title: title,
             content: content,

@@ -23,11 +23,14 @@ export const Blog = ({ user }) => {
   const remove = async (id) => {
     const token = JSON.parse(localStorage.getItem("token"));
     try {
-      await axios.delete(`http://localhost:3500/api/v1/posts/${id}`, {
-        headers: {
-          authorization: `Bearer ${token}`,
-        },
-      });
+      await axios.delete(
+        `https://blog-backend-4lug.onrender.com/api/v1/posts/${id}`,
+        {
+          headers: {
+            authorization: `Bearer ${token}`,
+          },
+        }
+      );
       setMsg("Product deleted successfully");
       window.location = "/";
     } catch (err) {
@@ -56,7 +59,8 @@ export const Blog = ({ user }) => {
               <div class="flex items-center justify-start mt-4 mb-4">
                 <button
                   onClick={() => {
-                    setPostId(post.id); setShowUpdate(true);
+                    setPostId(post.id);
+                    setShowUpdate(true);
                   }}
                   class="px-2 py-1 font-bold bg-red-400 text-white rounded-lg hover:bg-gray-500 mr-4"
                 >
@@ -97,7 +101,11 @@ export const Blog = ({ user }) => {
       </div>
       {showUpdate && (
         <>
-          <UpdateBlog postId={postId} postTitle={post.title} postContent={post.content}/>
+          <UpdateBlog
+            postId={postId}
+            postTitle={post.title}
+            postContent={post.content}
+          />
         </>
       )}
     </>
